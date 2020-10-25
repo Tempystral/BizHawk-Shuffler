@@ -10,3 +10,11 @@ print("a==a2: " .. tostring(a == a2))
 print(a.filename)
 print( b ) -- aka print(tostring(b))
 --]]
+
+c = game.newGame("Castlevania: Symphony of the Night", 2560, 4)
+
+gameList = {a, b, c}
+
+for index, g in ipairs(gameList) do
+    print(g)
+end

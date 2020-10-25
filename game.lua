@@ -29,7 +29,7 @@ local GameMetaTable = { -- Defines rules for how Game tables should behave.
   end;
 
   __tostring = function (self) -- How to serialize the format using print() or tostring()
-      return "ROM: " .. self.filename ..
+      return self.filename ..
              " Played " .. self.playcount .. plural(" time", self.playcount) ..
              " for " .. self.playtime .. plural(" frame", self.playtime)
   end
