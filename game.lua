@@ -1,3 +1,11 @@
+local plural = function(word, value)
+  if value == 1 then
+    return word
+  else
+    return word .. "s"
+  end
+end
+
 -- Module
 local game = {}
 
@@ -21,9 +29,9 @@ local GameMetaTable = { -- Defines rules for how Game tables should behave.
   end;
 
   __tostring = function (self) -- How to serialize the format using print() or tostring()
-    local frameString = " frame"
-    if self.playtime ~= 1 then frameString = frameString .. "s" end
-      return "ROM: " .. self.filename .. " Played " .. tostring(self.playcount) .. " times for " .. tostring(self.playtime) .. frameString
+      return "ROM: " .. self.filename ..
+             " Played " .. self.playcount .. plural(" time", self.playcount) ..
+             " for " .. self.playtime .. plural(" frame", self.playtime)
   end
 }
 
