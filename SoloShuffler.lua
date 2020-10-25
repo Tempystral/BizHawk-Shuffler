@@ -1,3 +1,6 @@
+-- Require
+game = require("game")
+
 -- Define Globals
 diff = 0			-- Current frame
 lowTime = 5		-- Min shuffle time
